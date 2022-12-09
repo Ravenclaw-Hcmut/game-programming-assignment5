@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utili
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities.Culling.Editor", "PhotonUnityNetworking.Utilities.Culling.Editor.csproj", "{596F6854-F7FF-37CE-5A90-B75CD01FCCAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{7CFE0691-B2BE-35F3-7B4D-F8DE1E7A29CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{596F6854-F7FF-37CE-5A90-B75CD01FCCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{596F6854-F7FF-37CE-5A90-B75CD01FCCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{596F6854-F7FF-37CE-5A90-B75CD01FCCAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CFE0691-B2BE-35F3-7B4D-F8DE1E7A29CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CFE0691-B2BE-35F3-7B4D-F8DE1E7A29CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CFE0691-B2BE-35F3-7B4D-F8DE1E7A29CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CFE0691-B2BE-35F3-7B4D-F8DE1E7A29CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: loading
-  open: 1
+  open: 0
 --- !u!1 &620152664
 GameObject:
   m_ObjectHideFlags: 0

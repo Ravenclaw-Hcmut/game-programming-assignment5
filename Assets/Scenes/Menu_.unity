@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 520157950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: title
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2125027184}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerNameManager, Assembly-CSharp
         m_MethodName: OnUsernameInputValueChanged
         m_Mode: 1
@@ -1734,7 +1734,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 645285600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: create room
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 660748789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: room
@@ -2699,7 +2699,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 870107012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: error
@@ -2849,7 +2849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2857,14 +2857,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2923,6 +2915,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &963194229
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
 --- !u!1 &998414671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,7 +4427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1917619822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: find room
@@ -4647,7 +4647,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2024788086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 647e8b511d2c95b45bf0c9487b1c340e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0623c3f5c6e75ae4ea6ec14dc6e6520c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2024788088
@@ -4735,9 +4735,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037972232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c615795069bcf2419725c1e0e39b8b7, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d096dd1f62f344caf18605c1aae54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuName: loading
+  open: 0
 --- !u!1 &2125027177
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,7 +4754,6 @@ GameObject:
   - component: {fileID: 2125027178}
   - component: {fileID: 2125027182}
   - component: {fileID: 2125027183}
-  - component: {fileID: 2125027184}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4856,17 +4857,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125027177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b659feeb4130d458d53e9fc08a51f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 885a76ee71d5d8944ab2580218f04c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomNameInputField: {fileID: 527412676}
   errorText: {fileID: 1414290306}
   roomNameText: {fileID: 738420261}
   roomListContent: {fileID: 513197373}
-  roomListItemPrefab: {fileID: 5590041413162275129, guid: 1269824dfd0cb1642a9294fbbfb1a1ea, type: 3}
+  roomListItemPrefab: {fileID: 6411019594694184438, guid: 6a295afb395e22b4398843fb60c1eb5e, type: 3}
   playerListContent: {fileID: 477289445}
-  PlayerListItemPrefab: {fileID: 1878336002063414184, guid: d11edb5dbb901db49a659dace16ad395, type: 3}
-  startGameButton: {fileID: 740400222}
+  PlayerListItemPrefab: {fileID: 4272034398112159921, guid: 4e7a99b3d103e3e4eb2534b53f2b0229, type: 3}
+  startGameButton: {fileID: 477066596}
 --- !u!114 &2125027183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4876,7 +4877,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125027177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd7aeb2241709a4887f5724b5334e1b, type: 3}
+  m_Script: {fileID: 11500000, guid: efb4faaf16fa6b64bb525dca8914f970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menus:
@@ -4886,16 +4887,3 @@ MonoBehaviour:
   - {fileID: 660748791}
   - {fileID: 870107014}
   - {fileID: 1917619824}
---- !u!114 &2125027184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125027177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4dd1fbfdcf283d419246bb5a0918bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usernameInput: {fileID: 572175657}

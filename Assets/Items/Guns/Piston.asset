@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Piston
   m_EditorClassIdentifier: 
   itemName: Piston
-  damage: 0
+  damage: 20

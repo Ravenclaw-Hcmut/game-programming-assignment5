@@ -8,13 +8,16 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 
 //public class PlayerController : MonoBehaviour
-public class PlayerController : MonoBehaviourPunCallbacks
+public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 {
     [SerializeField] GameObject cameraHolder;
+    [SerializeField] GameObject u1; 
 
     [SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
 
     [SerializeField] Item[] items;
+
+    [SerializeField] Image healthBarImage;
 
     int itemIndex;
     int previousItemIndex = -1;
@@ -29,10 +32,15 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     PhotonView pv;
 
+    const float maxHealth = 100f;
+    float currentHealth = maxHealth;
+
+    PlayerManager playerManager;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         pv = GetComponent<PhotonView>();
+        playerManager = PhotonView.Find((int)pv.InstantiationData[0]).GetComponent<PlayerManager>();
     }
 
     private void Start()
@@ -51,7 +59,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             Destroy(GetComponentInChildren<Camera>().gameObject);
             Destroy(rb);
-            //Destroy(ui);
+            Destroy(u1);
         }
     }
 
@@ -102,7 +110,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         if (transform.position.y < -10f) // Die if you fall out of the world
         {
-            //Die();
+            Die();
         }
     }
 
@@ -120,8 +128,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     void Jump()
     {
-        //Debug.Log("Keydown: " + Input.GetKeyDown(KeyCode.Space));
-        //Debug.Log("is grounded: " + grounded);
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb.AddForce(transform.up * jumpForce);
@@ -176,5 +182,32 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if (!pv.IsMine) { return; }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        pv.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(float damage)
+    {
+        if (!pv.IsMine)
+        {
+            return;
+        }
+
+        currentHealth -= damage;
+        healthBarImage.fillAmount = currentHealth / maxHealth;
+        
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        playerManager.Die();
     }
 }

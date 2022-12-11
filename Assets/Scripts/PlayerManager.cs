@@ -39,42 +39,42 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), Vector3.zero, Quaternion.identity);
-		//Transform spawnpoint = SpawnManager.Instance.GetSpawnpoint();
-		//controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), spawnpoint.position, spawnpoint.rotation, 0, new object[] { PV.ViewID });
+		//PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), Vector3.zero, Quaternion.identity, 0, new object[] { pv.ViewID });
+		Transform spawnpoint = SpawnManager.Instance.GetSpawnPoint();
+        controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), spawnpoint.position, spawnpoint.rotation,0, new object[] { pv.ViewID });
 	}
 
 
 	public void Die()
 	{
-		//PhotonNetwork.Destroy(controller);
-		//CreateController();
+		PhotonNetwork.Destroy(controller);
+		CreateController();
 
-		//deaths++;
+        deaths++;
 
-		//Hashtable hash = new Hashtable();
-		//hash.Add("deaths", deaths);
-		//PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-	}
+        Hashtable hash = new Hashtable();
+        hash.Add("deaths", deaths);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+    }
 
 
 	public void GetKill()
 	{
-		//PV.RPC(nameof(RPC_GetKill), PV.Owner);
-	}
+        pv.RPC(nameof(RPC_GetKill), pv.Owner);
+    }
 
 	[PunRPC]
 	void RPC_GetKill()
 	{
-		//kills++;
+        kills++;
 
-		//Hashtable hash = new Hashtable();
-		//hash.Add("kills", kills);
-		//PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-	}
+        Hashtable hash = new Hashtable();
+        hash.Add("kills", kills);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+    }
 
-	//public static PlayerManager Find(Player player)
-	//{
-		//return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.PV.Owner == player);
-	//}
+    public static PlayerManager Find(Player player)
+    {
+        return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.pv.	Owner == player);
+    }
 }

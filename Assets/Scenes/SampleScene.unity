@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 895721000}
         m_TargetAssemblyTypeName: PlayerNameManager, Assembly-CSharp
         m_MethodName: OnUsernameInputValueChanged
         m_Mode: 1
@@ -2086,6 +2086,7 @@ GameObject:
   - component: {fileID: 895720995}
   - component: {fileID: 895720994}
   - component: {fileID: 895720999}
+  - component: {fileID: 895721000}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2219,6 +2220,19 @@ MonoBehaviour:
   - {fileID: 2020746097}
   - {fileID: 474042823}
   - {fileID: 321502570}
+--- !u!114 &895721000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895720993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c6baae43ff1142bf85e55ab559aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userNameInput: {fileID: 198667656}
 --- !u!1 &924234726
 GameObject:
   m_ObjectHideFlags: 0

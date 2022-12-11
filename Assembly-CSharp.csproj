@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\RoomListItem.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\PlayerGroundCheck.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\PlayerListItem.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\SingleShotGun.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoardItem.cs" />
     <Compile Include="Assets\Scripts\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\RoomManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />

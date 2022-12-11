@@ -50,31 +50,31 @@ public class PlayerManager : MonoBehaviour
 		PhotonNetwork.Destroy(controller);
 		CreateController();
 
-		//deaths++;
+        deaths++;
 
-		//Hashtable hash = new Hashtable();
-		//hash.Add("deaths", deaths);
-		//PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-	}
+        Hashtable hash = new Hashtable();
+        hash.Add("deaths", deaths);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+    }
 
 
 	public void GetKill()
 	{
-		//PV.RPC(nameof(RPC_GetKill), PV.Owner);
-	}
+        pv.RPC(nameof(RPC_GetKill), pv.Owner);
+    }
 
 	[PunRPC]
 	void RPC_GetKill()
 	{
-		//kills++;
+        kills++;
 
-		//Hashtable hash = new Hashtable();
-		//hash.Add("kills", kills);
-		//PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-	}
+        Hashtable hash = new Hashtable();
+        hash.Add("kills", kills);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+    }
 
-	//public static PlayerManager Find(Player player)
-	//{
-		//return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.PV.Owner == player);
-	//}
+    public static PlayerManager Find(Player player)
+    {
+        return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.pv.	Owner == player);
+    }
 }

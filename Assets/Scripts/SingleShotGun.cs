@@ -9,7 +9,51 @@ public class SingleShotGun : Gun
 
 	PhotonView PV;
 
-	void Awake()
+    bool canUseUlti = false;
+    bool recentlyUsedUlti = false;
+
+    //-----------------------------------------------------------------
+    //public float targetTime = 5.0f;
+
+    //void Update()
+    //{
+
+    //    targetTime -= Time.deltaTime;
+
+    //    if (targetTime <= 0.0f)
+    //    {
+    //        timerEnded();
+    //    }
+
+    //}
+
+    public override void timerEnded()
+	{
+        if (itemInfo.itemName == "Sniper")
+        {
+
+            canUseUlti = true;
+
+            //Debug.Log("Gun: " + itemInfo.itemName + ", end time");
+        } 
+            
+        //targetTime = 5.0f;
+    }
+    public override bool getUltiStatus()
+    {
+        if (itemInfo.itemName != "Sniper") return false;
+
+        if (recentlyUsedUlti)
+        {
+            recentlyUsedUlti = false;
+            return true;
+        }
+        return false;
+    }
+    //-----------------------------------------------------------------
+
+
+    void Awake()
 	{
 		PV = GetComponent<PhotonView>();
 	}
@@ -26,7 +70,15 @@ public class SingleShotGun : Gun
         ray.origin = cam.transform.position;
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
+            if (canUseUlti == false && itemInfo.itemName == "Sniper") return;
 			hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
+            if (itemInfo.itemName == "Sniper")
+            {
+                Debug.Log("Ulti");
+                canUseUlti = false;
+                recentlyUsedUlti = true;
+            }
+
 			PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
         }
     }

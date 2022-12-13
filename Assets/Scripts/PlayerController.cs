@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     float verticalLookRotation;
     bool grounded;
+    public float targetTime = 5.0f;
+
 
     Vector3 smoothMoveVelocity;
     Vector3 moveAmount;
@@ -70,6 +72,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Move();
         Jump();
 
+        targetTime -= Time.deltaTime;
+        if (targetTime <= 0.0f)
+        {
+            targetTime = 0.0f;
+            items[itemIndex].timerEnded();
+
+            bool isUseUlti = items[itemIndex].getUltiStatus();
+            if (isUseUlti) targetTime = 5.0f;
+
+        }
 
         for (int i = 0; i < items.Length; i++)
         {
